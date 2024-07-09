@@ -14,6 +14,7 @@ import com.jeesite.common.utils.excel.annotation.ExcelField;
 import com.jeesite.common.utils.excel.annotation.ExcelField.Align;
 import com.jeesite.common.utils.excel.annotation.ExcelFields;
 import com.jeesite.modules.sys.entity.EmpUser;
+import org.apache.poi.hpsf.Decimal;
 
 /**
  * 日常体征Entity
@@ -31,6 +32,7 @@ import com.jeesite.modules.sys.entity.EmpUser;
 		@Column(name="systolic_pressure", attrName="systolicPressure", label="收缩压", comment="收缩压（mmHg）", isUpdateForce=true),
 		@Column(name="diastolic_pressure", attrName="diastolicPressure", label="舒张压", comment="舒张压(mmHg)", isUpdateForce=true),
 		@Column(name="blood_sugar", attrName="bloodSugar", label="血糖", isUpdateForce=true),
+		@Column(name="temperature", attrName="temperature", label="体温", isUpdateForce=true),
 	},
 		joinTable = {
 				@JoinTable(type=Type.JOIN, entity= EmpUser.class, alias="e",
@@ -53,6 +55,7 @@ public class DailySigns extends DataEntity<DailySigns> {
 	private Long systolicPressure;		// 收缩压（mmHg）
 	private Long diastolicPressure;		// 舒张压(mmHg)
 	private Double bloodSugar;		// 血糖
+	private Decimal temperature;		// 体温
 
 	@ExcelFields({
 		@ExcelField(title="id", attrName="tid", align=Align.CENTER, sort=10),
@@ -153,5 +156,12 @@ public class DailySigns extends DataEntity<DailySigns> {
 	public void setBloodSugar(Double bloodSugar) {
 		this.bloodSugar = bloodSugar;
 	}
-	
+
+	public Decimal getTemperature() {
+		return temperature;
+	}
+
+	public void setTemperature(Decimal temperature) {
+		this.temperature = temperature;
+	}
 }

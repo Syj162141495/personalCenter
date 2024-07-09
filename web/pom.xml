@@ -58,6 +58,10 @@
 			<artifactId>jeesite-module-cms</artifactId>
 			<version>${project.parent.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot</artifactId>
+		</dependency>
 
 		<!-- 内容管理-页面静态化（标准版）
 		<dependency>

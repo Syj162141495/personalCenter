@@ -45,6 +45,18 @@ import com.jeesite.modules.sys.entity.EmpUser;
 		@Column(name="sports_situation", attrName="sportsSituation", label="运动情况"),
 		@Column(name="mode_of_motion", attrName="modeOfMotion", label="运动方式"),
 		@Column(name="meditation_situation", attrName="meditationSituation", label="生活以静坐为主"),
+
+		@Column(name="touxiang", attrName="touXiang", label="头像"),
+		@Column(name="weight", attrName="weight", label="体重"),
+		@Column(name="jiwang", attrName="jiWang", label="既往史"),
+		@Column(name="shoushu", attrName="shouShu", label="手术史"),
+		@Column(name="jiazu", attrName="jiaZu", label="家族史"),
+		@Column(name="jibing", attrName="jiBing", label="疾病史"),
+		@Column(name="yichuan", attrName="yiChuan", label="遗传史"),
+		@Column(name="biaoqian", attrName="biaoQian", label="标签"),
+		@Column(name="shebao_kahao", attrName="sheBaoKaHao", label="社保卡号"),
+		@Column(name="shebao_xiaofei", attrName="sheBaoXiaoFei", label="社保消费"),
+		@Column(name="shebao_jiesuan", attrName="sheBaoJieSuan", label="社保结算"),
 	},
 	joinTable = {
 		@JoinTable(type=Type.JOIN, entity=EmpUser.class, alias="e",
@@ -57,6 +69,16 @@ import com.jeesite.modules.sys.entity.EmpUser;
 public class BasicInformation extends DataEntity<BasicInformation> {
 	
 	private static final long serialVersionUID = 1L;
+	private String touXiang;		// 头像
+	private String weight;		// 体重
+	private String jiWang;		// 既往史
+	private String shouShu;		// 手术史
+	private String jiaZu;		// 家族史
+	private String jiBing;		// 疾病史
+	private String biaoQian;		// 标签
+	private String sheBaoKaHao;		// 社保卡号
+	private String sheBaoXiaoFei;		// 社保消费
+	private String sheBaoJieSuan;		// 社保结算
 	private String userCode;		// user_code
 	private String patientName;		// 患者姓名
 	private String sex;		// 性别
@@ -301,5 +323,84 @@ public class BasicInformation extends DataEntity<BasicInformation> {
 	public void setMeditationSituation(String meditationSituation) {
 		this.meditationSituation = meditationSituation;
 	}
-	
+
+	public String getTouXiang() {
+		return touXiang;
+	}
+
+	public void setTouXiang(String touXiang) {
+		this.touXiang = touXiang;
+	}
+
+	public String getWeight() {
+		return weight;
+	}
+
+	public void setWeight(String weight) {
+		this.weight = weight;
+	}
+
+	public String getJiWang() {
+		return jiWang;
+	}
+
+	public void setJiWang(String jiWang) {
+		this.jiWang = jiWang;
+	}
+
+	public String getShouShu() {
+		return shouShu;
+	}
+
+	public void setShouShu(String shouShu) {
+		this.shouShu = shouShu;
+	}
+
+	public String getJiaZu() {
+		return jiaZu;
+	}
+
+	public void setJiaZu(String jiaZu) {
+		this.jiaZu = jiaZu;
+	}
+
+	public String getJiBing() {
+		return jiBing;
+	}
+
+	public void setJiBing(String jiBing) {
+		this.jiBing = jiBing;
+	}
+
+	public String getBiaoQian() {
+		return biaoQian;
+	}
+
+	public void setBiaoQian(String biaoQian) {
+		this.biaoQian = biaoQian;
+	}
+
+	public String getSheBaoKaHao() {
+		return sheBaoKaHao;
+	}
+
+	public void setSheBaoKaHao(String sheBaoKaHao) {
+		this.sheBaoKaHao = sheBaoKaHao;
+	}
+
+	public String getSheBaoXiaoFei() {
+		return sheBaoXiaoFei;
+	}
+
+	public void setSheBaoXiaoFei(String sheBaoXiaoFei) {
+		this.sheBaoXiaoFei = sheBaoXiaoFei;
+	}
+
+	public String getSheBaoJieSuan() {
+		return sheBaoJieSuan;
+	}
+
+	public void setSheBaoJieSuan(String sheBaoJieSuan) {
+		this.sheBaoJieSuan = sheBaoJieSuan;
+	}
 }
