@@ -27,24 +27,24 @@
 		order by update_date desc
 	</select>
 	<select id="listTemprature" resultType="com.alibaba.fastjson.JSONObject">
-		select date_format(create_time, '%Y-%m-%d %H:%i:%s') as d, temperature as v
+		select date_format(create_time, '%Y-%m-%d') as d, temperature as v
 		from daily_signs
 		where phone = #{phone}
-		order by create_time desc
+		order by create_time
 		limit 7
 	</select>
 	<select id="listHeartRate" resultType="com.alibaba.fastjson.JSONObject">
-		select date_format(create_time, '%Y-%m-%d %H:%i:%s') as d,heart_rate as v
+		select date_format(create_time, '%Y-%m-%d') as d,heart_rate as v
 		from daily_signs
 		where phone = #{phone}
-		order by create_time desc
+		order by create_time
 		limit 15
 	</select>
 	<select id="listBloodPressure" resultType="com.alibaba.fastjson.JSONObject">
-		select date_format(create_time, '%Y-%m-%d %H:%i:%s') as d,systolic_pressure as high,diastolic_pressure as low
+		select date_format(create_time, '%Y-%m-%d') as d,systolic_pressure as high,diastolic_pressure as low
 		from daily_signs
 		where phone = #{phone}
-		order by create_time desc
+		order by create_time
 		limit 15
 	</select>
 </mapper>
